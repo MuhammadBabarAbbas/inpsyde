@@ -1,4 +1,14 @@
 {
-    "name": "babar/inpsyde",
-    "version": "1.0.0"
+    "name": "inpsyde",
+    "version": "1.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/MuhammadBabarAbbas/inpsyde"
+    },
+    "author": {
+        "name": "Babar Abbas",
+        "email": "abbasmuhammadbabar@gmail.com"
+    },
+    "license": "GPL",
+    "homepage": "https://github.com/MuhammadBabarAbbas/inpsyde"
 }
