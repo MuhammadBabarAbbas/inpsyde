@@ -1,7 +1,7 @@
 {
     "name": "babar/inpsyde",
     "description": "Inpsyde Job Plugin",
-    "type": "project",
+    "type": "wordpress-plugin",
     "license": "GPL",
     "authors": [
         {
@@ -10,7 +10,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=7.3.12"
+    },
     "autoload": {
         "psr-4": {"Inc\\": "./inc"}
     }
