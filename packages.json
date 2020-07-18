@@ -2,7 +2,7 @@
     "name": "inpsyde",
     "version": "1.0.0",
     "repository": {
-      "type": "git",
+      "type": "composer",
       "url": "https://github.com/MuhammadBabarAbbas/inpsyde"
     },
     "author": {
