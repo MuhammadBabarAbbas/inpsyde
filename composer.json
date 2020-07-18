@@ -11,8 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.3.12",
-        "composer/installers": "v1.10.9"
+        "php": ">=7.3.12"
     },
     "autoload": {
         "psr-4": {"Inc\\": "./inc"}
