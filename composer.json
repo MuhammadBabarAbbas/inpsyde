@@ -1,0 +1,17 @@
+{
+    "name": "babar/inpsyde",
+    "description": "Inpsyde Job Plugin",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Babar Abbas",
+            "email": "abbasmuhammadbabar@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}

@@ -1,0 +1,12 @@
+.entry-content > :not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+    max-width: 90% !important;
+}
+
+.error {
+    background-color: #fce4e4;
+    border: 1px solid #fcc2c3;
+    float: left;
+    margin: 20px 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
