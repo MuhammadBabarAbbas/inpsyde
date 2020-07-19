@@ -25,6 +25,67 @@ Each row in the table shows a clickable ID, NAME and USERNAME of the user. On cl
 
 ## Implementation Details
 
+Following is the directory tree for inpsyde plugin.
+
+```
+inpsyde
+¦   .gitattributes
+¦   .gitignore
+¦   composer.json
+¦   index.php
+¦   inpsyde.php
+¦   LICENSE
+¦   README.md
+¦   uninstall.php
+¦
++---assets
+¦       bootstrap.css
+¦       bootstrap.min.js
+¦       dataTables.bootstrap4.min.css
+¦       dataTables.bootstrap4.min.js
+¦       jquery-3.5.1.js
+¦       jquery.dataTables.min.js
+¦       README.md
+¦       script.js
+¦       style.css
+¦
++---inc
+¦   +---classes
+¦   ¦   ¦   Activate.php
+¦   ¦   ¦   Deactivate.php
+¦   ¦   ¦   InpsydeJobPlugin.php
+¦   ¦   ¦
+¦   ¦   +---common
+¦   ¦   ¦       Constants.php
+¦   ¦   ¦
+¦   ¦   +---exception
+¦   ¦   ¦       InpsydeExternalLinkException.php
+¦   ¦   ¦       JsonException.php
+¦   ¦   ¦
+¦   ¦   +---util
+¦   ¦           InpsydeCache.php
+¦   ¦
+¦   +---endpoints
+¦       +---ajax
+¦               AjaxController.php
+¦
++---templates
+¦       template-inpsyde.php
+¦
++---vendor
+    ¦   autoload.php
+    ¦
+    +---composer
+            autoload_classmap.php
+            autoload_namespaces.php
+            autoload_psr4.php
+            autoload_real.php
+            autoload_static.php
+            ClassLoader.php
+            installed.json
+            LICENSE
+```
+
 Code is commented to help, while going through it. Following are the details of implementation for individual files.
 
 # Main File (inpsyde.php)
