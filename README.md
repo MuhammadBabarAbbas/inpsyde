@@ -86,7 +86,9 @@ inpsyde
             LICENSE
 ```
 
-Code is commented to help, while going through it. Following are the details of implementation for individual files.
+Code is commented to help, while going through it. All the classes that are used in this plugin are in the **inc\classes** directory. This directory has been further divided into util, common and exception classes.
+
+Following are the details of implementation for individual files.
 
 # Main File (inpsyde.php)
 
