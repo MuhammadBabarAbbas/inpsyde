@@ -27,4 +27,31 @@ Each row in the table shows a clickable ID, NAME and USERNAME of the user. On cl
 
 Code is commented to help, while going through it. Following are the details of implementation for individual files.
 
-# Main File
+# Main File (inpsyde.php)
+
+```
+(defined('ABSPATH') && function_exists('add_action')) or die('Illegal access');
+
+if (file_exists(dirname(__file__) . '/vendor/autoload.php')) {
+    require_once dirname(__file__) . '/vendor/autoload.php';
+}
+
+use Inc\classes\Activate;
+use Inc\classes\Deactivate;
+use Inc\classes\InpsydeJobPlugin;
+
+    $inpsydeJobPlugin = new InpsydeJobPlugin();
+
+    //activation
+    register_activation_hook(__file__, array($inpsydeJobPlugin, 'activate'));
+
+    add_action('wp_enqueue_scripts', array($inpsydeJobPlugin,
+            'add_datatables_scripts'));
+    add_action('wp_enqueue_scripts', array($inpsydeJobPlugin, 'add_datatables_style'));
+
+    add_action('query_vars', array($inpsydeJobPlugin, 'add_query_var'));
+
+    add_action('template_include', array($inpsydeJobPlugin, 'add_template'));
+
+    register_deactivation_hook(__file__, array('Deactivate', 'deactivate'));
+```
