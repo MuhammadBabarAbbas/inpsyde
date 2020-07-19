@@ -9,7 +9,7 @@
             "email": "abbasmuhammadbabar@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.3.12",
         "composer/installers": ">=v1.0.6"
