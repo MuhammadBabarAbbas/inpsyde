@@ -1,11 +1,11 @@
 {
-    "name": "babar/inpsyde",
+    "name": "MuhammadBabarAbbas/inpsyde",
     "description": "Inpsyde Job Plugin",
     "type": "wordpress-plugin",
     "license": "GPL",
     "authors": [
         {
-            "name": "Babar Abbas",
+            "name": "Muhammad Babar Abbas",
             "email": "abbasmuhammadbabar@gmail.com"
         }
     ],
