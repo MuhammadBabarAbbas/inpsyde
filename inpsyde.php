@@ -12,27 +12,36 @@ Author URI: http://inpsyde-job-plugin.com
 License: GPLv2+
 */
 
+//Following line ensures that this file is being accessed in wordpress context
 (defined('ABSPATH') && function_exists('add_action')) or die('Illegal access');
 
+//composer autoload to use namespaces and referencing files
 if (file_exists(dirname(__file__) . '/vendor/autoload.php')) {
     require_once dirname(__file__) . '/vendor/autoload.php';
 }
 
+//loading classes to be used on this page
 use Inc\classes\Activate;
 use Inc\classes\Deactivate;
 use Inc\classes\InpsydeJobPlugin;
 
-    $inpsydeJobPlugin = new InpsydeJobPlugin();
+//Main class for this plugin is being initialized
+$inpsydeJobPlugin = new InpsydeJobPlugin();
 
-    //activation
-    register_activation_hook(__file__, array($inpsydeJobPlugin, 'activate'));
+//activation of plugin, registering activate function from class InpsydeJobPlugin
+register_activation_hook(__file__, array($inpsydeJobPlugin, 'activate'));
 
-    add_action('wp_enqueue_scripts', array($inpsydeJobPlugin,
-            'add_datatables_scripts'));
-    add_action('wp_enqueue_scripts', array($inpsydeJobPlugin, 'add_datatables_style'));
+//deactivation of plugin, registering deactivate function from class InpsydeJobPlugin, calling the static function
+register_deactivation_hook(__file__, array('Deactivate', 'deactivate'));
 
-    add_action('query_vars', array($inpsydeJobPlugin, 'add_query_var'));
+//attaching javascripts for loading on frontend
+add_action('wp_enqueue_scripts', array($inpsydeJobPlugin, 'add_scripts'));
 
-    add_action('template_include', array($inpsydeJobPlugin, 'add_template'));
+//attaching stylesheets for loading by frontend
+add_action('wp_enqueue_scripts', array($inpsydeJobPlugin, 'add_styles'));
 
-    register_deactivation_hook(__file__, array('Deactivate', 'deactivate'));
+//adding custom inpsyde query variable inpsyde_id
+add_action('query_vars', array($inpsydeJobPlugin, 'add_query_var'));
+
+//adding custom inpsyde page template for plugin
+add_action('template_include', array($inpsydeJobPlugin, 'add_template'));
