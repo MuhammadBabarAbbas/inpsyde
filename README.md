@@ -21,4 +21,10 @@ $ composer require muhammadbabarabbas/inpsyde
 
 Once installed, **Inpsyde Job Plugin** appears in the Wordpress Admin Plugins Section. It can be activated by clicking on the Activate link below the plugin name. Once activated it creates an endpoint with the url **http://WORDPRESS_SITE_URL/inpsyde**. If the user moves to this link, he finds a datatable showing a user list populated by fetching the data from [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users).
 
-Each row in the table shows a clickable ID, NAME and USERNAME of the user. On clicking any of these links, respective user's detail is populated in modal panel. This detail is fetched from [https://jsonplaceholder.typicode.com/users/$ID](https://jsonplaceholder.typicode.com/users/$ID).
+Each row in the table shows a clickable ID, NAME and USERNAME of the user. On clicking any of these links, respective user's detail is populated in a modal panel. This detail is fetched from [https://jsonplaceholder.typicode.com/users/$ID](https://jsonplaceholder.typicode.com/users/$ID), i.e. based on user id.
+
+## Implementation Details
+
+Code is commented to help, while going through it. Following are the details of implementation for individual files.
+
+# Main File
