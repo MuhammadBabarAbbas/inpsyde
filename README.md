@@ -5,6 +5,8 @@
 ## Installation
 
 ```
+$ composer config repositories.wp-plugins vcs https://github.com/MuhammadBabarAbbas/inpsyde
+$ composer config minimum-stability dev
 $ composer require muhammadbabarabbas/inpsyde
 ```
 
