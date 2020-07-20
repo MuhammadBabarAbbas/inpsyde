@@ -268,7 +268,7 @@ class InpsydeJobPlugin
 
 ```
 
-# Caching and fetching class (Inpsyde Cache)
+# Caching and fetching class (InpsydeCache.php)
 
 ```
 
@@ -354,7 +354,6 @@ class InpsydeCache
 
 ```
 
-<?php
 /**
  * @package  InpsydeJobPlugin
  */
