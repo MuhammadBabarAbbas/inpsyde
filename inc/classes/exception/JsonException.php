@@ -6,23 +6,32 @@ namespace Inc\classes\util;
 
 use Inc\classes\common\Constants;
 
-use Exception;
+use exception;
 
+/**
+ * This is a custom Exception class, that handles JSON related errors
+ * 
+ * @extends Exception
+ */
 class InpsydeExternalLinkException extends Exception
 {
+    /**
+     * Adding customized message to generated exception
+     * 
+     * @return string Custom error message
+     */
     public function errorMessage()
     {
         //error message
         $errorMsg = 'A JSON Exception occurred';
-     
-       if (WP_DEBUG) {
-            $errorMsg = 'An JSON occurred on line ' . $this->
-                getLine() . ' in ' . $this->getFile() . ': <b>' . $this->getMessage() .
-                '</b>';
+
+        if (WP_DEBUG) {
+            $errorMsg = 'An JSON occurred on line ' . $this->getLine() . ' in ' . $this->
+                getFile() . ': <b>' . $this->getMessage() . '</b>';
         }
         return $errorMsg;
     }
-    
+
     /**
      * Translates JSON_ERROR_* constant into meaningful message.
      *

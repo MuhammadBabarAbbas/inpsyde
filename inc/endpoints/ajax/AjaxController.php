@@ -4,17 +4,21 @@
  */
 namespace Inc\endpoints\ajax;
 
+//loading classes to be used on this page
 use Inc\classes\util\InpsydeCache;
 use Inc\classes\common\Constants;
-
-
 use \Inc\classes\util\InpsydeExternalLinkException;
 use \Inc\classes\util\JsonException;
 use exception;
 
+//loading wordpress context
 $webDir = explode('wp-content', dirname(__file__));
 require ($webDir[0] . '/wp-load.php');
 
+/**
+ * This method shows user detail in modal panel in a formatted way
+ * 
+ */
 function showData($data)
 {
     try {
@@ -74,5 +78,6 @@ catch (exception $ex) {
 //  echo 'a';
 //}
 //call_user_func("'" . $_GET['action'] . "'", $_GET['id']);
+
 
 ?>

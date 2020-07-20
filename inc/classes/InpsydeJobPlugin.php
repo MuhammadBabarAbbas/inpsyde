@@ -1,16 +1,17 @@
 <?php
 /**
  * @package  InpsydeJobPlugin
- * 
- * This class is the main plugin class, which holds the core functions of the plugin
- * 
  */
 namespace Inc\classes;
 
-
+//loading classes to be used in this class
 use Inc\classes\Activate;
 use Inc\classes\Deactivate;
 
+/**
+ * This class is the main plugin class, which holds the core functions of the plugin
+ * 
+ */
 class InpsydeJobPlugin
 {
 

@@ -2,4 +2,3 @@
 /**
  * @package  InpsydeJobPlugin
  */
-// Silence is golden.

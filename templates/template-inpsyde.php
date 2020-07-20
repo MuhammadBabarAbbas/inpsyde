@@ -2,20 +2,27 @@
 /**
  * @package  InpsydeJobPlugin
  */
- 
+    //loading classes to be used on this page
     use Inc\classes\util\InpsydeCache;
     use Inc\classes\common\Constants;
     use \Inc\classes\exception\InpsydeExternalLinkException;
     use \Inc\classes\exception\JsonException;
-        
+    
+    //get template header    
     get_header();
-    $data = array();
+    
+    $userList = array();
+    
+    //custome error message string container
     $errorMessage = "";
     try{
-        $data = InpsydeCache::getCachedContent(Constants::INPSYDE_USERS_ENDPOINT, Constants::INPSYDE_USERS_TRANSIENT_KEY, false);
+        //Getting cached user list
+        $userList = InpsydeCache::getCachedContent(Constants::INPSYDE_USERS_ENDPOINT, Constants::INPSYDE_USERS_TRANSIENT_KEY, false);
     } catch (InpsydeExternalLinkException $ex) {
+        //Any exception or error related to provided external links
         $errorMessage = $ex->errorMessage();
     }  catch (JsonException $ex) {
+        //Json errors
         $errorMessage = $ex->errorMessage();
     }    
     if($errorMessage != ""){
@@ -28,6 +35,8 @@
 <?php
 }
 ?>
+
+<!-- Modal Panel -->
 <div class="modal fade" id="userModal" role="dialog">
     <div class="modal-dialog">
  
@@ -48,7 +57,7 @@
    </div>
    
    
-   
+<!-- content area to show user list -->   
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 			<header class="entry-header">
@@ -66,8 +75,8 @@
                     </thead>
                     <tbody>
                     <?php
-                    if($data != null && is_array($data) && sizeof($data) > 0){
-                        foreach($data as $row){
+                    if($userList != null && is_array($userList) && sizeof($userList) > 0){
+                        foreach($userList as $row){
                             echo '<tr><td><a href="#" rel="'.$row->id.'" class="popup">'.$row->id.'</a></td><td><a href="#" rel="'.$row->id.'" class="popup">'.$row->name.'</a></td><td><a href="#" rel="'.$row->id.'" class="popup">'.$row->username.'</a></td></tr>';
                         }                       
                     }                    
@@ -79,4 +88,5 @@
 	</main>
 </div>
 <?php
+    // template footer
 	get_footer();
