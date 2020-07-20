@@ -88,7 +88,7 @@ inpsyde
 
 Code is commented to help, while going through it. All the classes that are used in this plugin are in the **inc\classes** directory. This directory has been further divided into **util**, **common** and **exception** classes. Javascripts and stylesheets go into **assets** folder. **templates** folder contains the inpsyde template file. Ajax endpoint for serverside calls is in ""inc\endpoints** folder.
 
-Following are the details of implementation for individual files.
+Following are the implementation details of a few plugin files.
 
 # Main File (inpsyde.php)
 
@@ -347,5 +347,58 @@ class InpsydeCache
     }
 }
 
+
+```
+
+# Activation Class (Activate.php)
+
+```
+
+<?php
+/**
+ * @package  InpsydeJobPlugin
+ */
+
+namespace Inc\classes;
+
+/**
+ * This class contains all the methods that are used on plugin activation
+ */
+class Activate
+{
+    /**
+     * Constructor of the class
+     * 
+     */
+    function __construct()
+    {
+        //attaching method to be called on wordpress initialization
+        add_action('init', array($this, 'add_endpoint'));
+    }
+
+    /**
+     * Method called on activation, it is used to add endpoint on activation
+     * 
+     */
+    public function activate()
+    {
+        //explicitly calling the method once the activate method is called 
+        $this->add_endpoint();
+        
+        //updating rewrite rules
+        flush_rewrite_rules();
+    }
+
+    /**
+     * This method adds inpsyde endpoint
+     * 
+     */
+    public function add_endpoint()
+    {
+        //Adding inpsyde rewrite rule
+        add_rewrite_rule('inpsyde/?([^/]*)',
+            'index.php?inpsydepage=inpsyde&inpsyde_id=$matches[1]', 'top');
+    }
+}
 
 ```
