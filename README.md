@@ -32,9 +32,11 @@ inpsyde
 ¦   .gitattributes
 ¦   .gitignore
 ¦   composer.json
+¦   composer.lock
 ¦   index.php
 ¦   inpsyde.php
 ¦   LICENSE
+¦   phpunit.xml
 ¦   README.md
 ¦   uninstall.php
 ¦
@@ -45,7 +47,6 @@ inpsyde
 ¦       dataTables.bootstrap4.min.js
 ¦       jquery-3.5.1.js
 ¦       jquery.dataTables.min.js
-¦       README.md
 ¦       script.js
 ¦       style.css
 ¦
@@ -72,18 +73,17 @@ inpsyde
 +---templates
 ¦       template-inpsyde.php
 ¦
++---tests
+¦   +---phpunit
+¦       ¦   bootstrap.php
+¦       ¦   InpsydeTestCase.php
+¦       ¦
+¦       +---testcases
+¦               InpsydeCacheTest.php
+¦               InpsydeJobPluginTest.php
+¦
 +---vendor
     ¦   autoload.php
-    ¦
-    +---composer
-            autoload_classmap.php
-            autoload_namespaces.php
-            autoload_psr4.php
-            autoload_real.php
-            autoload_static.php
-            ClassLoader.php
-            installed.json
-            LICENSE
 ```
 
 Code is commented to help, while going through it. All the classes that are used in this plugin are in the **inc\classes** directory. This directory has been further divided into **util**, **common** and **exception** classes. Javascripts and stylesheets go into **assets** folder. **templates** folder contains the inpsyde template file. Ajax endpoint for serverside calls is in ""inc\endpoints** folder.
