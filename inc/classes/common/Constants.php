@@ -10,7 +10,6 @@ namespace Inc\classes\common;
  */
 class Constants
 {
-
     //inpsyde provided link
     const INPSYDE_USERS_ENDPOINT = 'https://jsonplaceholder.typicode.com/users';
 

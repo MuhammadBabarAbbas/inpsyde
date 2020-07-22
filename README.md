@@ -279,8 +279,8 @@ namespace Inc\classes\util;
 
 //loading classes to be used in this class
 use Inc\classes\common\Constants;
-use \Inc\classes\util\InpsydeExternalLinkException;
-use \Inc\classes\util\JsonException;
+use Inc\classes\exception\InpsydeExternalLinkException;
+use Inc\classes\exception\JsonException;
 
 /**
  * This class contains method to cache the content acquired from inpsyde provided endpoints

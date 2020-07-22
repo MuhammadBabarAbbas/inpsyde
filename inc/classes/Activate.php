@@ -14,7 +14,7 @@ class Activate
      * Constructor of the class
      * 
      */
-    function __construct()
+    public function __construct()
     {
         //attaching method to be called on wordpress initialization
         add_action('init', array($this, 'add_endpoint'));

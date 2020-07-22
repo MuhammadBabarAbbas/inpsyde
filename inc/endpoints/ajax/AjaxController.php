@@ -7,8 +7,8 @@ namespace Inc\endpoints\ajax;
 //loading classes to be used on this page
 use Inc\classes\util\InpsydeCache;
 use Inc\classes\common\Constants;
-use \Inc\classes\util\InpsydeExternalLinkException;
-use \Inc\classes\util\JsonException;
+use Inc\classes\exception\InpsydeExternalLinkException;
+use Inc\classes\exception\JsonException;
 use exception;
 
 //loading wordpress context

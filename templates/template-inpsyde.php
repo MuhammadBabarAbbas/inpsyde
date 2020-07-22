@@ -5,8 +5,8 @@
     //loading classes to be used on this page
     use Inc\classes\util\InpsydeCache;
     use Inc\classes\common\Constants;
-    use \Inc\classes\exception\InpsydeExternalLinkException;
-    use \Inc\classes\exception\JsonException;
+    use Inc\classes\exception\InpsydeExternalLinkException;
+    use Inc\classes\exception\JsonException;
     
     //get template header    
     get_header();

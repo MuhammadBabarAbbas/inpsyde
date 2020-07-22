@@ -2,7 +2,7 @@
 /**
  * @package  InpsydeJobPlugin
  */
-namespace Inc\classes\util\exception;
+namespace Inc\classes\exception;
 
 use Inc\classes\common\Constants;
 

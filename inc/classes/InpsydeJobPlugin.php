@@ -20,34 +20,34 @@ class InpsydeJobPlugin
     /**
      * Constructor of the class
      */
-    function __construct()
+    public function __construct()
     {
         //getting plugin directory name for usage in the class
         $this->plugin = substr(plugin_basename(__file__), 0, strpos(plugin_basename(__file__),
             "/"));
     }
 
-    function pluginName()
+    public function pluginName()
     {
         return "Inpsyde Job Plugin";
     }
 
     /**
-     * Function called on plugin activation
+     * public function called on plugin activation
      */
-    function activate()
+    public function activate()
     {
-        //calling the activate function, this function is called from plugin main file.
+        //calling the activate public function, this public function is called from plugin main file.
         $activate = new Activate();
         $activate->activate();
     }
 
     /**
-     * Function called on plugin deactivation
+     * public function called on plugin deactivation
      */
-    function deactivate()
+    public function deactivate()
     {
-        //Calling deactivation function in a static manner   
+        //Calling deactivation public function in a static manner   
         Deactivate::deactivate();
     }
 
@@ -58,7 +58,7 @@ class InpsydeJobPlugin
      * 
      * @return  array updated query variables
      */
-    function add_query_var($vars)
+    public function add_query_var($vars)
     {
         //adding specific variable for inspyde plugin, this will be used to load template
         $vars[] = 'inpsyde_id';
@@ -72,7 +72,7 @@ class InpsydeJobPlugin
      * 
      * @return string existing or inpsyde template path
      */
-    function add_template($template)
+    public function add_template($template)
     {
         //template is only loaded when it finds inpsyde_id in query variables 
         if (get_query_var('inpsyde_id', false) !== false) {
@@ -89,7 +89,7 @@ class InpsydeJobPlugin
     /**
      * Adding javascripts to be used on front end
      */
-    function add_scripts()
+    public function add_scripts()
     {
         
         wp_enqueue_script('jQuery', plugins_url('/' . $this->plugin .
@@ -116,7 +116,7 @@ class InpsydeJobPlugin
     /**
      * Adding styles to be used on front end
      */
-    function add_styles()
+    public function add_styles()
     {
         //for datatable
         wp_enqueue_style('bootstrap_style', plugins_url('/' . $this->plugin .

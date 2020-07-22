@@ -2,7 +2,7 @@
 /**
  * @package  InpsydeJobPlugin
  */
-namespace Inc\classes\util;
+namespace Inc\classes\exception;
 
 use Inc\classes\common\Constants;
 
@@ -13,7 +13,7 @@ use exception;
  * 
  * @extends Exception
  */
-class InpsydeExternalLinkException extends Exception
+class JsonException extends Exception
 {
     /**
      * Adding customized message to generated exception

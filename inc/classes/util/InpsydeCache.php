@@ -6,8 +6,8 @@ namespace Inc\classes\util;
 
 //loading classes to be used in this class
 use Inc\classes\common\Constants;
-use \Inc\classes\util\InpsydeExternalLinkException;
-use \Inc\classes\util\JsonException;
+use Inc\classes\exception\InpsydeExternalLinkException;
+use Inc\classes\exception\JsonException;
 
 /**
  * This class contains method to cache the content acquired from inpsyde provided endpoints
@@ -38,7 +38,11 @@ class InpsydeCache
             $response = wp_remote_get($url);
             if (is_wp_error($response)) {
                 //throwing exception in case of error
-                throw new InpsydeExternalLinkException($response->getErrorMessage());
+                foreach($response->get_error_codes() as $code){
+                    foreach($response->get_error_messages($code) as $message){
+                        throw new InpsydeExternalLinkException($message);    
+                    }                       
+                }
                 return false;
             }
             $body = wp_remote_retrieve_body($response);
@@ -53,7 +57,7 @@ class InpsydeCache
             //checking empty json
             $body = $body == "{}" ? "" : $body;
             // Caching the data for one hour.
-            set_transient($key, $body, HOUR_IN_SECONDS);
+            set_transient($key, $body, 3600);
             $cachedContent = $body;
         }
 
